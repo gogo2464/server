@@ -110,7 +110,7 @@ void doprocessing (int sock, const char *password) {
 
 end:
    /* reply with a TLS Alert message for ease of analysis with tlsfuzzer */
-   ret = write(sock, "\x15\x03\x03\x00\x02\x02\x28", 7);
+   ret = write(sock, "ERROR\n", 6);
 
    if (ret < 0) {
       perror("ERROR writing to socket");
